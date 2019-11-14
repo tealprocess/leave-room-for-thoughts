@@ -1,0 +1,46 @@
+body {
+	margin: 0px;
+}
+
+
+h1 {
+	color: blue;
+}
+
+
+
+// grid--layout
+
+$column-width: 80px;
+$gutter-width: 16px;
+
+.gridded {
+	position: relative;
+	width: 100%;
+	max-width: 1136px;
+	margin: 0 auto;
+}
+
+[class^="col-"] {
+	float: left;
+	margin-right: $gutter-width;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	&:last-child {
+		margin-right: 0%;
+	}
+}
+
+// for-loop for setting widths of columns
+// --
+// example equation:
+// .col-1 { width: ( $column-width * 1 ) + ( $gutter-width * 0 )px; }
+// --
+// example output:
+// .col-1 { width: 80px; }
+
+@for $i from 1 through 12 {
+	.col-#{$i} { width: ( $column-width * $i ) + ( $gutter-width * ( $i - 1 ) ); }
+}

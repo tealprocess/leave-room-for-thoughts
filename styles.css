@@ -1,0 +1,75 @@
+body {
+  margin: 0px;
+}
+
+h1 {
+  color: blue;
+}
+
+.gridded {
+  position: relative;
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+
+[class^=col-] {
+  float: left;
+  margin-right: 16px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+[class^=col-]:last-child {
+  margin-right: 0%;
+}
+
+.col-1 {
+  width: 80px;
+}
+
+.col-2 {
+  width: 176px;
+}
+
+.col-3 {
+  width: 272px;
+}
+
+.col-4 {
+  width: 368px;
+}
+
+.col-5 {
+  width: 464px;
+}
+
+.col-6 {
+  width: 560px;
+}
+
+.col-7 {
+  width: 656px;
+}
+
+.col-8 {
+  width: 752px;
+}
+
+.col-9 {
+  width: 848px;
+}
+
+.col-10 {
+  width: 944px;
+}
+
+.col-11 {
+  width: 1040px;
+}
+
+.col-12 {
+  width: 1136px;
+}
+
+/*# sourceMappingURL=styles.css.map */
