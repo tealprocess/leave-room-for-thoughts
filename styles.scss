@@ -9,15 +9,37 @@ h1 {
 
 
 
-// grid--layout
+// grid layout
+
+$column-count: 12;
+$min-margin: 24px;
+
+$sm-column-width: 20px;
+$sm-gutter-width: 8px;
 
 $column-width: 80px;
 $gutter-width: 16px;
+$grid-width: ( ( $column-count * $column-width ) + ( ( $column-count - 1 ) * $gutter-width ) ) ;
+
+$desktop-breakpoint: ( $grid-width + ( $min-margin * 2 ) );
+
+@mixin desktop {
+  @media (min-width: #{$desktop-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: ( #{$desktop-breakpoint} - 1 )) {
+    @content;
+  }
+}
+
+// mobile-first as base styles
 
 .gridded {
 	position: relative;
-	width: 100%;
-	max-width: 1136px;
+	max-width: ( ( $column-count * $sm-column-width ) + ( ( $column-count - 1 ) * $sm-gutter-width ) );
 	margin: 0 auto;
 }
 
@@ -33,14 +55,52 @@ $gutter-width: 16px;
 	}
 }
 
+[class^="sm-col-"] {
+	margin-right: $sm-gutter-width;
+	&:last-child {
+		margin-right: 0%;
+	}
+}
+
+@include mobile {
+	.sm-col-0 {
+		display: none;
+	}
+}
+
 // for-loop for setting widths of columns
 // --
 // example equation:
-// .col-1 { width: ( $column-width * 1 ) + ( $gutter-width * 0 )px; }
+// .col-1 { width: ( $column-width * 1 ) + ( $gutter-width * 0 ); }
 // --
 // example output:
 // .col-1 { width: 80px; }
 
-@for $i from 1 through 12 {
-	.col-#{$i} { width: ( $column-width * $i ) + ( $gutter-width * ( $i - 1 ) ); }
+@for $i from 1 through $column-count {
+	.sm-col-#{$i} {
+		width: ( $sm-column-width * $i ) + ( $sm-gutter-width * ( $i - 1 ) );
+	}
 }
+
+// desktop adjustments
+
+@include desktop {
+	.gridded {
+		max-width: ( ( $column-count * $column-width ) + ( ( $column-count - 1 ) * $gutter-width ) );
+	}
+
+	[class^="col-"] {
+		margin-right: $gutter-width;
+	}
+
+	col-0 {
+		display: none;
+	}
+
+	@for $i from 1 through $column-count {
+		.col-#{$i} {
+			width: ( $column-width * $i ) + ( $gutter-width * ( $i - 1 ) );
+		}
+	}
+}
+
