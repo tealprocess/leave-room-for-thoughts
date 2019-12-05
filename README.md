@@ -5,6 +5,7 @@ An institution for creative exploration :)
 `git clone https://github.com/tealprocess/leave-room-for-thoughts.git`
 `cd leave-room-for-thoughts`
 `npx picosite -o .`
+(change theme from default to none)
 `npx @picosite/serve --local -i .`
 
 Open your browser to 127.0.0.1:4000 (or click on the link in your terminal) to view your site.
