@@ -51,6 +51,7 @@ p {
 
 .gridded {
   position: relative;
+  display: flex;
   max-width: 328px;
   margin: 0 auto;
 }

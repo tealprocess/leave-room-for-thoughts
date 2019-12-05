@@ -83,6 +83,7 @@ $desktop-breakpoint: ( $grid-width + ( $min-margin * 2 ) );
 
 .gridded {
 	position: relative;
+	display: flex;
 	max-width: ( ( $column-count * $sm-column-width ) + ( ( $column-count - 1 ) * $sm-gutter-width ) );
 	margin: 0 auto;
 }
