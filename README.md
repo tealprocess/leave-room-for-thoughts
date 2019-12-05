@@ -1,10 +1,15 @@
 # leave-room-for-thoughts
-An institution for creative exploration :) 
+An institution for creative exploration :)
 
 ## Install
 `git clone https://github.com/tealprocess/leave-room-for-thoughts.git`
+
 `cd leave-room-for-thoughts`
+
+`npm install -g npx`
+
 `npx picosite -o .`
+
 `npx @picosite/serve --local -i .`
 
 Open your browser to 127.0.0.1:4000 (or click on the link in your terminal) to view your site.
