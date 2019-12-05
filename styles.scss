@@ -1,3 +1,5 @@
+@import "mixins";
+
 body {
 	margin: 0px;
 }
@@ -7,6 +9,48 @@ h1 {
 	color: blue;
 }
 
+
+// fonts 
+
+@include font-face("Peignot", "../fonts/Peignot-Bold", null, null, "otf");
+@include font-face("Andale", "../fonts/Andale-Regular", null, null, "otf");
+@include font-face("SabonBI", "../fonts/SabonLT-BoldItalic", null, null, "otf");
+@include font-face("Scala", "../fonts/ScalaSans-Regular", null, null, "otf");
+
+// body font size
+$browser-context: 16;
+
+// function to convert px to em
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em
+}
+
+html {
+    line-height: 1.2;
+    font-size: em(16);
+}
+
+h3 {
+	font-family: "SabonBI";
+	font-size: em(24);
+	line-height: 24px;
+}
+
+h3.label {
+	font-family: "Peignot";
+	font-size: em(16);
+	line-height: 24px;
+	margin: 24px 0;
+}
+
+p {
+	font-family: "Scala";
+	font-size: em(16);
+}
+
+.ta-right {
+	text-align: right;
+}
 
 
 // grid layout

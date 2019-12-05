@@ -6,6 +6,49 @@ h1 {
   color: blue;
 }
 
+@font-face {
+  font-family: "Peignot";
+  src: url("../fonts/Peignot-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Andale";
+  src: url("../fonts/Andale-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SabonBI";
+  src: url("../fonts/SabonLT-BoldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Scala";
+  src: url("../fonts/ScalaSans-Regular.otf") format("opentype");
+}
+html {
+  line-height: 1.2;
+  font-size: 1em;
+}
+
+h3 {
+  font-family: "SabonBI";
+  font-size: 1.5em;
+  line-height: 24px;
+}
+
+h3.label {
+  font-family: "Peignot";
+  font-size: 1em;
+  line-height: 24px;
+  margin: 24px 0;
+}
+
+p {
+  font-family: "Scala";
+  font-size: 1em;
+}
+
+.ta-right {
+  text-align: right;
+}
+
 .gridded {
   position: relative;
   max-width: 328px;
