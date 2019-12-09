@@ -1,19 +1,15 @@
 @import "mixins";
 
-body {
-	margin: 0px;
-}
+// colors
 
-
-h1 {
-	color: blue;
-}
+$background-color: #FDF8F0;
+$deep-orange: #FEB018;
 
 
 // fonts 
 
 @include font-face("Peignot", "../fonts/Peignot-Bold", null, null, "otf");
-@include font-face("Andale", "../fonts/Andale-Regular", null, null, "otf");
+@include font-face("Andale", "../fonts/Andale-Mono", null, null, "ttf");
 @include font-face("SabonBI", "../fonts/SabonLT-BoldItalic", null, null, "otf");
 @include font-face("Scala", "../fonts/ScalaSans-Regular", null, null, "otf");
 
@@ -46,10 +42,67 @@ h3.label {
 p {
 	font-family: "Scala";
 	font-size: em(16);
+	line-height: 1.5;
+}
+
+p.mono {
+	font-family: "Andale";
+	letter-spacing: 2px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
 }
 
 .ta-right {
 	text-align: right;
+}
+
+
+// sections
+
+body {
+	margin: 0px;
+	background-color: $background-color;
+}
+
+.newSection {
+	margin-top: 3em;
+}
+
+
+// components
+
+.btn {
+	width: 100%;
+	border-radius: 5px;
+
+	> p {
+		margin: 0px;
+    	padding: 9px 10px;
+    	display: inline-block;
+	}
+
+	> i {
+		border: solid $background-color;
+		border-width: 0 2px 2px 0;
+		border-radius: 1px;
+		display: inline-block;
+		padding: 4px;
+		display: inline-block;
+		float: right;
+		margin: 15px;
+	}
+}
+
+.btn-orange {
+	background-color: $deep-orange;
+}
+
+i.right {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
 }
 
 
@@ -61,7 +114,7 @@ $min-margin: 24px;
 $sm-column-width: 20px;
 $sm-gutter-width: 8px;
 
-$column-width: 80px;
+$column-width: 84px;
 $gutter-width: 16px;
 $grid-width: ( ( $column-count * $column-width ) + ( ( $column-count - 1 ) * $gutter-width ) ) ;
 
@@ -84,8 +137,14 @@ $desktop-breakpoint: ( $grid-width + ( $min-margin * 2 ) );
 .gridded {
 	position: relative;
 	display: flex;
+	flex-direction: column;
 	max-width: ( ( $column-count * $sm-column-width ) + ( ( $column-count - 1 ) * $sm-gutter-width ) );
 	margin: 0 auto;
+}
+
+.row {
+	position: relative;
+	width: 100%;
 }
 
 [class^="col-"] {
@@ -97,6 +156,10 @@ $desktop-breakpoint: ( $grid-width + ( $min-margin * 2 ) );
 
 	&:last-child {
 		margin-right: 0%;
+	}
+
+	> img {
+		width: 100%;
 	}
 }
 

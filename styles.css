@@ -1,18 +1,10 @@
-body {
-  margin: 0px;
-}
-
-h1 {
-  color: blue;
-}
-
 @font-face {
   font-family: "Peignot";
   src: url("../fonts/Peignot-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "Andale";
-  src: url("../fonts/Andale-Regular.otf") format("opentype");
+  src: url("../fonts/Andale-Mono.ttf") format("truetype");
 }
 @font-face {
   font-family: "SabonBI";
@@ -43,17 +35,72 @@ h3.label {
 p {
   font-family: "Scala";
   font-size: 1em;
+  line-height: 1.5;
+}
+
+p.mono {
+  font-family: "Andale";
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .ta-right {
   text-align: right;
 }
 
+body {
+  margin: 0px;
+  background-color: #FDF8F0;
+}
+
+.newSection {
+  margin-top: 3em;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 5px;
+}
+.btn > p {
+  margin: 0px;
+  padding: 9px 10px;
+  display: inline-block;
+}
+.btn > i {
+  border: solid #FDF8F0;
+  border-width: 0 2px 2px 0;
+  border-radius: 1px;
+  display: inline-block;
+  padding: 4px;
+  display: inline-block;
+  float: right;
+  margin: 15px;
+}
+
+.btn-orange {
+  background-color: #FEB018;
+}
+
+i.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
 .gridded {
   position: relative;
   display: flex;
+  flex-direction: column;
   max-width: 328px;
   margin: 0 auto;
+}
+
+.row {
+  position: relative;
+  width: 100%;
 }
 
 [class^=col-] {
@@ -66,6 +113,9 @@ p {
 [class^=col-]:last-child {
   margin-right: 0%;
 }
+[class^=col-] > img {
+  width: 100%;
+}
 
 [class^=sm-col-] {
   margin-right: 8px;
@@ -74,7 +124,7 @@ p {
   margin-right: 0%;
 }
 
-@media (max-width: 1184px-1) {
+@media (max-width: 1232px-1) {
   .sm-col-0 {
     display: none;
   }
@@ -127,9 +177,9 @@ p {
   width: 328px;
 }
 
-@media (min-width: 1184px) {
+@media (min-width: 1232px) {
   .gridded {
-    max-width: 1136px;
+    max-width: 1184px;
   }
 
   [class^=col-] {
@@ -141,51 +191,51 @@ p {
   }
 
   .col-1 {
-    width: 80px;
+    width: 84px;
   }
 
   .col-2 {
-    width: 176px;
+    width: 184px;
   }
 
   .col-3 {
-    width: 272px;
+    width: 284px;
   }
 
   .col-4 {
-    width: 368px;
+    width: 384px;
   }
 
   .col-5 {
-    width: 464px;
+    width: 484px;
   }
 
   .col-6 {
-    width: 560px;
+    width: 584px;
   }
 
   .col-7 {
-    width: 656px;
+    width: 684px;
   }
 
   .col-8 {
-    width: 752px;
+    width: 784px;
   }
 
   .col-9 {
-    width: 848px;
+    width: 884px;
   }
 
   .col-10 {
-    width: 944px;
+    width: 984px;
   }
 
   .col-11 {
-    width: 1040px;
+    width: 1084px;
   }
 
   .col-12 {
-    width: 1136px;
+    width: 1184px;
   }
 }
 
