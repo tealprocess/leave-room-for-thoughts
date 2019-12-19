@@ -12,7 +12,7 @@ description: "lrft - encouraging creative exploration"
 		<div class="col-4 sm-col-11">
 			<h3>Introduction</h3>
 			<p>Teal Process & Company uses Leave Room for Thoughts (LRFT) as a vehicle to share the experience of a self-run trial residency, called Studio Office.</p>
-			<a href="https://paper.dropbox.com/doc/Residency-Site-Spec--AqJkmn1f6xvYFivoNg3dU2HEAQ-MNh3pomrZyr85Ax45pYmt" target="_blank"><div class="btn btn-orange">
+			<a href="/learn-more" target="_blank"><div class="btn btn-orange">
 				<p>The specs explain our approach</p>
 				<i class="arrow right"></i>
 			</div></a>
